@@ -83,7 +83,7 @@ body {
 }
 .form-control.success small {
   color: var(--color-success);
-  visibility: visible;
+  visibility: hidden;
 }
 .form-control.error small {
   color: var(--color-error);
