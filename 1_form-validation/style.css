@@ -1,0 +1,10 @@
+:root {
+  --color-background: #f9fafb;
+  --color-white: #fff;
+  --color-text: #777;
+  --color-success: #2ecc71;
+  --color-error: #e74c3c;
+
+  --brd-radius: 5px;
+  --bxs: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
