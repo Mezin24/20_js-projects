@@ -27,24 +27,30 @@
       </div>
 
       <h3>History</h3>
-      <ul id="list" class="list">
-        <li class="minus">
-          Cash <span>-$400</span><button class="delete-btn">x</button>
-        </li>
-      </ul>
+      <ul id="list" class="list"></ul>
 
       <h3>Add new transaction</h3>
       <form id="form">
         <div class="form-control">
           <label for="text">Text</label>
-          <input type="text" placeholder="Enter text..." id="text" />
+          <input
+            name="title"
+            type="text"
+            placeholder="Enter text..."
+            id="text"
+          />
         </div>
         <div class="form-control">
           <label for="amount"
             >Amount <br />
             (negative - expense, positive - income)</label
           >
-          <input type="number" placeholder="Enter amount..." id="amount" />
+          <input
+            name="amount"
+            type="number"
+            placeholder="Enter amount..."
+            id="amount"
+          />
         </div>
         <button class="btn">Add transation</button>
       </form>
