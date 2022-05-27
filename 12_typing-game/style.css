@@ -1,0 +1,118 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  background-color: #2c3e50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif; }
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px 15px; }
+
+.setitngs-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 30px; }
+
+.settings {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .settings.hide {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  .settings select {
+    width: 200px;
+    padding: 5px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border-radius: 0;
+    background-color: #a7c5e3; }
+
+.container {
+  background-color: #34495e;
+  padding: 20px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  position: relative;
+  text-align: center;
+  max-width: 500px;
+  width: 90%; }
+  .container h2 {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    border-radius: 4px;
+    margin: 0 0 40px; }
+  .container h4 {
+    margin: 0;
+    font-size: 32px; }
+  .container input {
+    border: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 300px;
+    padding: 12px 20px;
+    margin-top: 10px; }
+  .container .score-container {
+    position: absolute;
+    top: 60px;
+    right: 20px; }
+  .container .time-cotainer {
+    position: absolute;
+    top: 60px;
+    left: 20px; }
+  .container .end-game-container {
+    background-color: inherit;
+    display: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; }
