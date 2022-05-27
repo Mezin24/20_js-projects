@@ -2,6 +2,7 @@
 
 const postContainer = document.getElementById('post-container');
 const loader = document.getElementById('loader');
+const filterEl = document.getElementById('filter');
 
 let postLimit = 5;
 let currentPage = 1;
@@ -37,6 +38,25 @@ async function showPosts() {
   postContainer.insertAdjacentHTML('beforeend', html);
 }
 
+function filterPosts(e) {
+  const { value } = e.target;
+  const postsEls = document.querySelectorAll('.post');
+
+  postsEls.forEach((item) => {
+    const title = item.querySelector('.post-title').innerText.toLowerCase();
+    const body = item.querySelector('.post-body').innerText.toLowerCase();
+
+    if (
+      title.includes(value.toLowerCase()) ||
+      body.includes(value.toLowerCase())
+    ) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
 window.addEventListener('scroll', () => {
   const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
 
@@ -55,5 +75,4 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// TODO
-// ADD FILTER FUNCTIONALITY
+filterEl.addEventListener('input', filterPosts);
