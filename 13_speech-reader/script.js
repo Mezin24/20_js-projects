@@ -4,6 +4,7 @@ const textarea = document.getElementById('text');
 const readBtn = document.getElementById('read');
 const toggleBtn = document.getElementById('toggle');
 const closeBtn = document.getElementById('close');
+const modal = document.getElementById('text-box');
 
 const data = [
   {
@@ -60,12 +61,68 @@ data.forEach(createBox);
 
 function createBox(item) {
   const { image, text } = item;
-  const html = `
-    <div class="box">
-      <img src="${image}" alt="${text}"/>
-      <p class="info">${text}</p>
-    </div>
+
+  const box = document.createElement('div');
+  box.classList.add('box');
+  box.innerHTML = ` 
+    <img src="${image}" alt="${text}"/>
+    <p class="info">${text}</p>
   `;
 
-  main.insertAdjacentHTML('beforeend', html);
+  box.addEventListener('click', () => {
+    setTextMessage(text);
+    speakText();
+
+    box.classList.add('active');
+
+    setTimeout(() => {
+      box.classList.remove('active');
+    }, 800);
+  });
+
+  main.append(box);
 }
+
+const message = new SpeechSynthesisUtterance();
+
+function setTextMessage(text) {
+  message.text = text;
+}
+
+function speakText() {
+  speechSynthesis.speak(message);
+}
+
+let voices = [];
+
+function getVoices() {
+  voices = speechSynthesis.getVoices();
+
+  voices.forEach((voice) => {
+    const optionEl = document.createElement('option');
+    optionEl.value = voice.name;
+    optionEl.innerText = `${voice.name} ${voice.lang}`;
+
+    voicesSelect.append(optionEl);
+  });
+}
+
+function setVoice(e) {
+  message.voice = voices.find((voice) => voice.name === e.target.value);
+}
+
+speechSynthesis.addEventListener('voiceschanged', getVoices);
+getVoices();
+
+toggleBtn.addEventListener('click', () => {
+  modal.classList.toggle('show');
+});
+
+closeBtn.addEventListener('click', () => modal.classList.remove('show'));
+
+voicesSelect.addEventListener('change', setVoice);
+
+readBtn.addEventListener('click', () => {
+  setTextMessage(textarea.value);
+  speakText();
+});
