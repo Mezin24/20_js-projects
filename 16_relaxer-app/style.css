@@ -94,7 +94,7 @@ h1 {
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
-.container.shrink {
+.container.grow {
   -webkit-animation: grow 3s linear forwards;
           animation: grow 3s linear forwards; }
 
