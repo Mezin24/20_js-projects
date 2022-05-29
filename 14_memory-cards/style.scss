@@ -77,7 +77,6 @@ h1 {
     transform: translateX(0) rotateY(0deg);
   }
   &.left {
-    opacity: 1;
     transform: translateX(-50%) rotateY(10deg);
   }
 
@@ -129,6 +128,7 @@ h1 {
 
 .navigation {
   display: flex;
+  align-items: center;
   margin: 20px 0;
 
   .nav-button {
@@ -136,10 +136,12 @@ h1 {
     background-color: transparent;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 0;
   }
 
   p {
     margin: 0 25px;
+    font-weight: bold;
   }
 }
 

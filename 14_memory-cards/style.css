@@ -80,7 +80,6 @@ h1 {
     -webkit-transform: translateX(0) rotateY(0deg);
             transform: translateX(0) rotateY(0deg); }
   .card.left {
-    opacity: 1;
     -webkit-transform: translateX(-50%) rotateY(10deg);
             transform: translateX(-50%) rotateY(10deg); }
   .card.show-answer .inner-card {
@@ -139,14 +138,19 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 20px 0; }
   .navigation .nav-button {
     border: 0;
     background-color: transparent;
     cursor: pointer;
-    font-size: 16px; }
+    font-size: 16px;
+    margin-top: 0; }
   .navigation p {
-    margin: 0 25px; }
+    margin: 0 25px;
+    font-weight: bold; }
 
 .add-container {
   opacity: 0;
