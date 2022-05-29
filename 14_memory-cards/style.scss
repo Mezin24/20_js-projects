@@ -92,6 +92,7 @@ h1 {
   width: 100%;
   position: relative;
   transform-style: preserve-3d;
+  transition: transform 0.4s ease ;
 
   &-front,
   &-back {
@@ -105,6 +106,17 @@ h1 {
     height: 100%;
     width: 100%;
     background: #fff;
+
+    &::after {
+      content: '\f021';
+      position: absolute;
+      font-family: 'Font Awesome 6 Free', 'Lato', sans-serif;
+      top: 10px;
+      right: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #ddd;
+    }
   }
   &-front {
     transform: rotateX(0deg);
@@ -113,4 +125,64 @@ h1 {
   &-back {
     transform: rotateX(180deg);
   }
+}
+
+.navigation {
+  display: flex;
+  margin: 20px 0;
+
+  .nav-button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  p {
+    margin: 0 25px;
+  }
+}
+
+.add-container {
+  opacity: 0;
+  z-index: -1;
+  background-color: #f0f0f0;
+  border-top: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.3 ease;
+
+  &.show {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  h3 {
+    margin: 10px;
+  }
+}
+
+.form-group {
+  label {
+    display: block;
+    margin: 20px 0 10px;
+  }
+
+  textarea {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 12px;
+    min-width: 500px;
+    max-width: 100%;
+    resize: none;
+  }
+  
 }
