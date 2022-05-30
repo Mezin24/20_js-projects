@@ -36,6 +36,7 @@ h1 {
 }
 .countdown {
   display: flex;
+  // display: none;
   transform: scale(2);
 }
 
@@ -49,6 +50,16 @@ h1 {
   h2 {
     margin: 0 0 5px;
   }
+}
+
+.year {
+  font-size: 200px;
+  z-index: -2;
+  opacity: 0.4;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 500px) {
@@ -65,5 +76,9 @@ h1 {
     small {
       font-size: 10px;
     }
+  }
+
+  .year {
+    font-size: 120px;
   }
 }
