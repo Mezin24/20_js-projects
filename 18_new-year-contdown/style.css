@@ -40,9 +40,7 @@ h1 {
   margin: -80px 0 40px; }
 
 .countdown {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-transform: scale(2);
           transform: scale(2); }
 
